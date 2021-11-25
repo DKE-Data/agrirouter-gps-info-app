@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Agrirouter.ViewModels.Pages;assembly=Agrirouter"
+             x:Class="Agrirouter.UI.Pages.AboutPage"
+             Title="About"
+             x:DataType="pages:AboutPageViewModel">
+    
+    <WebView Margin="10">
+        <WebView.Source>
+            <HtmlWebViewSource Html="{Binding AboutText}" />
+        </WebView.Source>
+    </WebView>
+
+</ContentPage>

@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Agrirouter.ViewModels.Pages;assembly=Agrirouter"
+             x:Class="Agrirouter.UI.Pages.SettingsPage"
+             Title="Settings"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:behaviors="http://prismlibrary.com"
+             xmlns:controls="clr-namespace:Agrirouter.UI.Controls;assembly=Agrirouter"
+             ios:Page.UseSafeArea="true"
+             BackgroundColor="White"
+             x:DataType="pages:SettingsPageViewModel">
+
+    <StackLayout>
+
+        <TableView Intent="Settings"
+                   HasUnevenRows="True"
+                   BackgroundColor="Transparent">
+            <TableView.Root>
+                <TableRoot>
+                    <TableSection Title="Registration"
+
+                                  TextColor="{StaticResource Green}">
+
+                        <controls:ExtendedEntryCell Label="Registration Code"
+                                                    Keyboard="Default"
+                                                    LabelColor="Gray"
+                                                    TextColor="Black"
+                                                    Placeholder="Enter Code"
+                                                    Text="{Binding RegistrationCode}" />
+                        <ViewCell>
+                            <Grid Padding="{OnPlatform iOS='20,5', Android='15,5'}"
+                                  ColumnDefinitions="*, *"
+                                  RowDefinitions="Auto, Auto"
+                                  VerticalOptions="CenterAndExpand"
+                                  ColumnSpacing="10">
+
+                                <Button Grid.Column="0"
+                                        IsVisible="{Binding IsConnected}"
+                                        TextColor="White"
+                                        FontSize="13"
+                                        Padding="0"
+                                        HeightRequest="35"
+                                        CornerRadius="0"
+                                        Command="{Binding ConnectCommand}"
+                                        BackgroundColor="{StaticResource Green}"
+                                        Text="Reconnect" />
+
+                                <Button Grid.Column="1"
+                                        IsVisible="{Binding IsConnected}"
+                                        TextColor="White"
+                                        Padding="0"
+                                        FontSize="13"
+                                        HeightRequest="35"
+                                        CornerRadius="0"
+                                        Command="{Binding DisconnectCommand}"
+                                        BackgroundColor="{StaticResource Red}"
+                                        Text="Disconnect" />
+
+                                <Button IsVisible="{Binding IsConnected, Converter={StaticResource NotBoolConverter}}"
+                                        TextColor="White"
+                                        FontSize="13"
+                                        Padding="0"
+                                        Grid.ColumnSpan="2"
+                                        CornerRadius="0"
+                                        HeightRequest="35"
+                                        VerticalOptions="EndAndExpand"
+                                        Command="{Binding ConnectCommand}"
+                                        BackgroundColor="{StaticResource Green}"
+                                        Text="Connect" />
+
+                                <Label Grid.Column="0"
+                                       Grid.ColumnSpan="2"
+                                       Grid.Row="1"
+                                       IsVisible="{Binding IsConnected}"
+                                       Margin="5"
+                                       VerticalOptions="CenterAndExpand"
+                                       HorizontalTextAlignment="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Credentials are valid: "
+                                                  TextColor="Black"
+                                                  FontSize="13" />
+                                            <Span Text="{Binding CredentialsValidUntil}"
+                                                  TextColor="{StaticResource Green}"
+                                                  FontAttributes="Bold"
+                                                  FontSize="15" />
+                                            <Span Text=" days"
+                                                  TextColor="Black"
+                                                  FontSize="13" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="General"
+                                  TextColor="{StaticResource Green}">
+                        <TextCell Text="Environment"
+                                  TextColor="Gray"
+                                  DetailColor="{Binding IsConnected, Converter={StaticResource IsConnectedToColorConverter}}"
+                                  IsEnabled="{Binding IsConnected, Converter={StaticResource NotBoolConverter}}"
+                                  Detail="{Binding Environment.Name}">
+                            <Button.Behaviors>
+                                <behaviors:EventToCommandBehavior
+                                    EventName="Tapped"
+                                    Command="{Binding EnvironmentCommand}" />
+                            </Button.Behaviors>
+                        </TextCell>
+                        <TextCell Text="Record Cycle"
+                                  TextColor="Gray"
+                                  DetailColor="Black"
+                                  Detail="{Binding RecordCycle.Name}">
+                            <Button.Behaviors>
+                                <behaviors:EventToCommandBehavior
+                                    EventName="Tapped"
+                                    Command="{Binding RecordCycleCommand}" />
+                            </Button.Behaviors>
+                        </TextCell>
+                        <TextCell Text="Send Cycle"
+                                  TextColor="Gray"
+                                  DetailColor="Black"
+                                  Detail="{Binding SendCycle.Name}">
+                            <Button.Behaviors>
+                                <behaviors:EventToCommandBehavior
+                                    EventName="Tapped"
+                                    Command="{Binding SendCycleCommand}" />
+                            </Button.Behaviors>
+                        </TextCell>
+                    </TableSection>
+                    <TableSection Title="Additional"
+                                  TextColor="{StaticResource Green}">
+
+                        <SwitchCell Text="Keep Display On"
+                                    On="{Binding IsDisplayOn}" />
+
+                        <TextCell Text="ExternalID"
+                                  TextColor="Gray"
+                                  DetailColor="Black"
+                                  Detail="{Binding UniqId}">
+                            <Button.Behaviors>
+                                <behaviors:EventToCommandBehavior
+                                    EventName="Tapped"
+                                    Command="{Binding  ExternalIdCommand}" />
+                            </Button.Behaviors>
+                        </TextCell>
+
+                        <TextCell Text="Logs"
+                                  TextColor="Gray"
+                                  DetailColor="Black"
+                                  Detail="View Local Logs">
+                            <Button.Behaviors>
+                                <behaviors:EventToCommandBehavior
+                                    EventName="Tapped"
+                                    Command="{Binding GoToLogsCommand}" />
+                            </Button.Behaviors>
+                        </TextCell>
+
+                        <TextCell Text="Information"
+                                  TextColor="Gray"
+                                  DetailColor="Black"
+                                  Detail="About application">
+                            <Button.Behaviors>
+                                <behaviors:EventToCommandBehavior
+                                    EventName="Tapped"
+                                    Command="{Binding GoToAboutApplicationCommand}" />
+                            </Button.Behaviors>
+                        </TextCell>
+
+                    </TableSection>
+                    <TableSection Title="Status Information"
+                                  TextColor="{StaticResource Green}">
+
+                        <ViewCell>
+                            <Grid Padding="{OnPlatform iOS='20,5', Android='15,5'}"
+                                  ColumnDefinitions="*, Auto, Auto"
+                                  RowSpacing="5"
+                                  Margin="10,5"
+                                  VerticalOptions="FillAndExpand"
+                                  RowDefinitions="*, *"
+                                  ColumnSpacing="15">
+
+                                <Label Grid.Column="0"
+                                       Grid.Row="0"
+                                       FontSize="12"
+                                       VerticalOptions="CenterAndExpand"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="Gray"
+                                       Text="Last export date" />
+
+                                <Label Grid.Column="1"
+                                       Grid.Row="0"
+                                       FontSize="12"
+                                       VerticalOptions="CenterAndExpand"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="Gray"
+                                       Text="Buffered messages" />
+
+                                <Label Grid.Column="2"
+                                       Grid.Row="0"
+                                       FontSize="12"
+                                       VerticalOptions="CenterAndExpand"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="Gray"
+                                       Text="Buffered entries" />
+
+                                <Label Grid.Column="0"
+                                       Grid.Row="1"
+                                       TextColor="Black"
+                                       FontSize="13"
+                                       VerticalOptions="CenterAndExpand"
+                                       HorizontalTextAlignment="Center"
+                                       Text="{Binding ExportInformation.LastExportDateTimeString, Converter={StaticResource NullToNoDataConverter}}" />
+
+                                <Label Grid.Column="1"
+                                       Grid.Row="1"
+                                       TextColor="Black"
+                                       VerticalOptions="CenterAndExpand"
+                                       FontSize="14"
+                                       HorizontalTextAlignment="Center"
+                                       Text="{Binding ExportInformation.NotSentMessagesCount}" />
+
+                                <Label Grid.Column="2"
+                                       Grid.Row="1"
+                                       TextColor="Black"
+                                       VerticalOptions="CenterAndExpand"
+                                       FontSize="14"
+                                       HorizontalTextAlignment="Center"
+                                       Text="{Binding ExportInformation.NotSentEntriesCount}" />
+                            </Grid>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView.Root>
+        </TableView>
+
+    </StackLayout>
+
+</ContentPage>

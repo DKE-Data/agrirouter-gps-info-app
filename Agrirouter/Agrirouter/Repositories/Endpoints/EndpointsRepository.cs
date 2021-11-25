@@ -1,0 +1,24 @@
+/*
+ * Agrirouter GPS Info App
+ *  Copyright 2021 by dev4Agriculture
+ *  
+ *  Funded by the Bundesministerium für Ernährung und Landwirtschaft (BMEL)
+ *  as part of the Experimentierfelder-Project
+ *
+ * Licensed under Apache2
+ */
+
+using System.Collections.Generic;
+using Agrirouter.Models;
+using Agrirouter.Repositories.Abstract;
+
+namespace Agrirouter.Repositories.Endpoints
+{
+    public class EndpointsRepository : Repository<List<EndpointModel>>, IEndpointsRepository
+    {
+        public override List<EndpointModel> Initialize()
+        {
+            return new List<EndpointModel>();
+        }
+    }
+}

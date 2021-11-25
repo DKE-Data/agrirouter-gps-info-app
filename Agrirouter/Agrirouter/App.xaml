@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dryIoc:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:dryIoc="http://prismlibrary.com"
+                  xmlns:converters="clr-namespace:Agrirouter.Common.Converters;assembly=Agrirouter"
+                  x:Class="Agrirouter.App">
+    <dryIoc:PrismApplication.Resources>
+
+        <ResourceDictionary>
+            <converters:NotBoolConverter x:Key="NotBoolConverter" />
+            <converters:NullToNoDataConverter x:Key="NullToNoDataConverter" />
+            <converters:IsConnectedToColorConverter x:Key="IsConnectedToColorConverter" />
+            
+            <Color x:Key="Green">#71B790</Color>
+            <Color x:Key="Red">#f54e42</Color>
+            <Color x:Key="LightGray">#e3e3e3</Color>
+            
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="White" />
+                <Setter Property="BarTextColor" Value="Black" />
+            </Style>
+            
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </dryIoc:PrismApplication.Resources>
+</dryIoc:PrismApplication>

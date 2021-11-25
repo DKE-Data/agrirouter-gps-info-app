@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Agrirouter.ViewModels.Pages;assembly=Agrirouter"
+             x:Class="Agrirouter.UI.Pages.BatteryOptimizationsPage"
+             BackgroundColor="White"
+             x:DataType="pages:BatteryOptimizationsPageViewModel">
+    
+    <NavigationPage.TitleView>
+        <Label Text="Willkommen zur GPS-Info App"
+               TextColor="Black"
+               FontSize="16"
+               Margin="0,0,10,0"
+               HorizontalOptions="CenterAndExpand"/>
+    </NavigationPage.TitleView>
+    
+    <ScrollView>
+        <StackLayout Spacing="10"
+                     Padding="20">
+            <Label Text="GPS positionen per agrirouter austauschen"
+                   Margin="0,10"
+                   FontAttributes="Bold"
+                   FontSize="16"
+                   TextColor="Gray"/>
+
+            <Image Source="ic_logo" 
+                   HeightRequest="150"
+                   Margin="0,20"/>
+            
+            <Label Text="Wichtige Information"
+                   Margin="0,10"
+                   FontAttributes="Bold"
+                   TextColor="Red"
+                   FontSize="20"/>
+            
+            <Label Text="Um auch GPS-Positionen zu senden, wenn die App nicht im Vordergrund ist, müssen bei den meisten Android-Geräten die BatterieEinstellungen angepasst werden"
+                   LineHeight="1.2"
+                   FontSize="14"
+                   TextColor="Gray"/>
+            
+            <Label Text="Wie funktionierts?"
+                   Margin="0,10"
+                   FontAttributes="Bold"
+                   FontSize="16"
+                   TextColor="Gray"/>
+            
+            <Label Text="1. Gerätewartung in den Einstellungen aufrufen"
+                   FontSize="14"
+                   TextColor="Gray"/>
+
+            <Label Text="2. Auf &quot;Batterie&quot; klicken"
+                   FontSize="14"
+                   TextColor="Gray"/>
+
+            <Label Text="3. &quot;Grenzen der HintergrundNutzung&quot; und dann &quot;Apps die nie im Standby sind&quot; wählen "
+                   FontSize="14"
+                   TextColor="Gray"/>
+
+            <Label Text="4. &quot;+&quot; klicken und die GPS-Info-App zufügen"
+                   FontSize="14"
+                   TextColor="Gray"/>
+
+
+            <Button VerticalOptions="EndAndExpand"
+                    HeightRequest="46"
+                    CornerRadius="23"
+                    TextColor="White"
+                    Command="{Binding ContinueCommand}"
+                    BackgroundColor="{StaticResource Green}"
+                    TextTransform="None"
+                    Text="OK"/>
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

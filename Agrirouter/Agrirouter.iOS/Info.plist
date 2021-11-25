@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+  <dict>
+    <key>UIDeviceFamily</key>
+    <array>
+      <integer>1</integer>
+      <integer>2</integer>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>MinimumOSVersion</key>
+    <string>8.0</string>
+    <key>CFBundleDisplayName</key>
+    <string>GPS App</string>
+    <key>CFBundleIdentifier</key>
+    <string>de.dev4agriculture.agrirouter</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.1</string>
+    <key>CFBundleVersion</key>
+    <string>85</string>
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+    <key>CFBundleName</key>
+    <string>GPS App</string>
+    <key>XSAppIconAssets</key>
+    <string>Assets.xcassets/AppIcon.appiconset</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Can we use your location at all times?</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Can we use your location when your application is being used?</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Can we use your location at all times?</string>
+    <key>UIBackgroundModes</key>
+    <array>
+      <string>location</string>
+      <string>fetch</string>
+    </array>
+    <key>BGTaskSchedulerPermittedIdentifiers</key>
+    <array>
+      <string>de.dev4agriculture.agrirouter</string>
+    </array>
+  </dict>
+</plist>
+
