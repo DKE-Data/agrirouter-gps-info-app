@@ -26,6 +26,8 @@ The specification of the functionalities can be found [here](docs/specification)
 
 The source code misses the following sensitive information to be buildable:
 
-1.) The API Code for the Google Maps integration. Get your code [in your google developer account](https://cloud.google.com/maps-platform/) and enter it in the file [AndroidManifest.XML](/Agrirouter/AndroidManifest.XML) at __android:name="com.google.android.geo.API_KEY"__
+1.) To build the agrirouter DotNet SDK, 
 
-2.) The ApplicationId and the CertificationVersionId have to be entered from an application generated in the agrirouter UI. See [the agrirouter documentation](https://docs.my-agrirouter.com/agrirouter-interface-documentation/latest/applications.html). These codes need to be entered Agrirouter/Common/Constants.cs
+2.) The API Code for the Google Maps integration. Get your code [in your google developer account](https://cloud.google.com/maps-platform/) and enter it in the file [AndroidManifest.XML](/Agrirouter/Agrirouter.Android/Properties/AndroidManifest.XML) at __android:name="com.google.android.geo.API_KEY"__
+
+3.) The ApplicationId and the CertificationVersionId have to be entered from an application generated in the agrirouter UI. See [the agrirouter documentation](https://docs.my-agrirouter.com/agrirouter-interface-documentation/latest/applications.html). These codes need to be entered [Constants.cs](/Agrirouter/Agrirouter/Common/Constants.cs)
