@@ -57,6 +57,9 @@ The application shows markers of all other endpoints that send GPS positions. Th
 * <img src="assets/images/ic_pin_offline.png" width="20">: The position is not older than 15 minutes
 * No Pin: If there was a position, it is now older than 15 minutes
 
+When clicking on a marker, the user can gain more information about this specific endpoint
+
+
 ### Settings
 In the settings, the user has the following possibilities:
 
@@ -67,5 +70,3 @@ In the settings, the user has the following possibilities:
 * **Keep display on**: This prohibits the screen from going black while working
 * **View the logs**: Logs can be exported e.g. in case of errors
 * **View status information**: When was the last message sent, are there buffered messages due to internet connection issues?
-
-When clicking on a marker, the user can gain more information about this specific endpoint
