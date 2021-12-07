@@ -2,7 +2,7 @@
  * Agrirouter GPS Info App
  *  Copyright 2021 by dev4Agriculture
  *  
- *  Funded by the Bundesministerium für Ernährung und Landwirtschaft (BMEL)
+ *  Funded by the Bundesministerium fï¿½r Ernï¿½hrung und Landwirtschaft (BMEL)
  *  as part of the Experimentierfelder-Project
  *
  * Licensed under Apache2
@@ -25,6 +25,8 @@ namespace Agrirouter.Common
         public const int EndpointRemoveTime = 15;
 
         public const string DateTimeFormat = "dd.MM.yyyy HH:mm";
+
+        public const int OnReadOutboxTimerPeriod = 10000;
         
         public static class LocalizationConstants
         {

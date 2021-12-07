@@ -2,7 +2,7 @@
  * Agrirouter GPS Info App
  *  Copyright 2021 by dev4Agriculture
  *  
- *  Funded by the Bundesministerium für Ernährung und Landwirtschaft (BMEL)
+ *  Funded by the Bundesministerium fï¿½r Ernï¿½hrung und Landwirtschaft (BMEL)
  *  as part of the Experimentierfelder-Project
  *
  * Licensed under Apache2
@@ -94,7 +94,7 @@ namespace Agrirouter.Managers.Agrirouter
             _teamSetContextId = Guid.NewGuid().ToString();
             _pendingMessageList = new List<PendingMessageModel>();
 
-            _readOutboxTimer = new Timer(10000);
+            _readOutboxTimer = new Timer(Constants.OnReadOutboxTimerPeriod);
             _readOutboxTimer.Elapsed += OnReadOutboxTimerEvent;
             _readOutboxTimer.AutoReset = true;
 
@@ -432,9 +432,9 @@ namespace Agrirouter.Managers.Agrirouter
                         {
                             await _gpsInfoMessagesService.RemoveMessage(message.Id);
 
-                                var statusInformation = await _statusInformationRepository.GetAsync();
-                                statusInformation.LastExportDateTime = DateTime.UtcNow;
-                                await _statusInformationRepository.SetAsync(statusInformation);
+                            var statusInformation = await _statusInformationRepository.GetAsync();
+                            statusInformation.LastExportDateTime = DateTime.UtcNow;
+                            await _statusInformationRepository.SetAsync(statusInformation);
                         }
                     }
                     catch (Exception e)
@@ -517,11 +517,11 @@ namespace Agrirouter.Managers.Agrirouter
             }
         }
 
-        private void OnReadOutboxTimerEvent(object sender, ElapsedEventArgs e)
+        private async void OnReadOutboxTimerEvent(object sender, ElapsedEventArgs e)
         {
             try
             {
-                ReadOutbox();
+                await ReadOutbox();
             }
             catch (Exception exception)
             {
@@ -782,7 +782,7 @@ namespace Agrirouter.Managers.Agrirouter
                 {
                     var gpsEntry = new GPSList.Types.GPSEntry();
 
-                    gpsEntry.PositionUp = (long) (location.Altitude ?? 0);
+                    gpsEntry.PositionUp = (long)(location.Altitude ?? 0);
                     gpsEntry.PositionNorth = location.Latitude;
                     gpsEntry.PositionEast = location.Longitude;
                     gpsEntry.PositionStatus = GPSList.Types.GPSEntry.Types.PositionStatus.DGnss;

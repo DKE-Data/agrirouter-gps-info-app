@@ -2,7 +2,7 @@
  * Agrirouter GPS Info App
  *  Copyright 2021 by dev4Agriculture
  *  
- *  Funded by the Bundesministerium für Ernährung und Landwirtschaft (BMEL)
+ *  Funded by the Bundesministerium fï¿½r Ernï¿½hrung und Landwirtschaft (BMEL)
  *  as part of the Experimentierfelder-Project
  *
  * Licensed under Apache2
@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Agrirouter.Managers.Agrirouter;
 using Agrirouter.Services.UserSettings;
+using Microsoft.AppCenter.Crashes;
 using Shiny;
 using Shiny.Jobs;
 
@@ -46,6 +47,7 @@ namespace Agrirouter.Services.Shiny.Jobs
             }
             catch (Exception e)
             {
+                Crashes.TrackError(e);
                 return false;
             }
         }
@@ -67,6 +69,7 @@ namespace Agrirouter.Services.Shiny.Jobs
                 }
                 catch (Exception e)
                 {
+                    Crashes.TrackError(e);
                     return false;
                 }
             }
