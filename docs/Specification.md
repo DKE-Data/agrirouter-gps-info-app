@@ -23,11 +23,13 @@ The app shall:
 
 
 ## UI Behaviour
+* Splash Screen
+    * While loading, a splash screen shall show the App logo
 * Start Screen 
     * The start screen is the map
-    * On the map, there is a round button that leads to the settings
-    * On the map, there is a button to pause connection to agrirouter
-    * On start of the app, the connection is active (if already onboarded)
+    * On top of the map, there is a round button that leads to the settings
+    * On the map, there is a button to pause sending positions to agrirouter
+    * On start of the app, the sending is active (if already onboarded)
 * Settings Screen
     * The settings have a field to enter a TAN and a button to perform onboarding
     * The settings - after onboarding succeeded - provide a TAN field, a ReOnboard-Button and a Disconnect-Button
@@ -37,7 +39,7 @@ The app shall:
     * Errors are displayed as popup
     * The map view changes with orientation of the smartphone (Horizontal/Vertical)
     * If GPS access is disallowed, this is an error that produces a Popup
-    * Provided Languages are German and English
+    * Provided Language is English
 
 
 ## On Maps
@@ -50,23 +52,18 @@ The app shall:
 
 * **Capabilities**: The app shall have the following Capabilities:
     * Send/Receive GPS:Info
-    * Receive EFDI
 
 * **Subscriptions**:  
     * The app shall subscribe for GPS:Info messages
-    * The app shall subscribe for EFDI messages
-    * The subscription is optional due to a setting in the settings
-
-        **Remark**: If the subscription is deselected, an empty Subscription request needs to be sent
-
-* **Sending Cycle**: The app shall send GPS packages every 10 Seconds
+    
+* **Sending Cycle**: The app shall send GPS packages every 5,10 or 20 Seconds depending on the settings
 
 * **Connection Interface**: The app shall use the HTTP REST interface of agrirouter
 
 * **Push Notifications**: Push notifications shall be activated
 
-* **Requesting the feed**: The app shall request the messages from the feed for the last 10 minutes on connection
-* **Clear the feed**: The app shall clear its feed after receiving the messages for the last 10 minutes
+* **Requesting the feed**: The app shall request the messages from the feed for the last 15 minutes on connection
+* **Clear the feed**: The app shall clear its feed after receiving the messages for the last 15 minutes
 
 * **Requesting the ecosystem**: To apply proper naming for the received GPS positions, the app will request the ecosystem every 5 minutes.
 
@@ -98,7 +95,7 @@ The app shall keep sending GPS positions even though it's in the background. An 
 ## Deliverables
 
 As a result, we will deliver:
-* The source code in a publicly available Repository of dev4Agriculture
+* The source code in a publicly available Repository
 * An app documentation within the repository
 * App-Delivery for testing; e.g. in TestFlight
 * A short video showing the functionalities (no marketing quality)
