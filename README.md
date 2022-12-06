@@ -27,6 +27,10 @@ The GPS Info App was implemented by [dev4Agriculture](https://www.dev4Agricultur
 The specification of the functionalities can be found [here](docs/Specification.md).
 
 
+## UseCase
+
+There is a blog article describing potential [use cases for the app](https://www.dev4agriculture.de/en/2022/12/04/agrirouter-gps-info-app-2/).
+
 ## Setting up the app for building in your environment
 
 The source code misses the following sensitive information to be buildable:
