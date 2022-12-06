@@ -5,19 +5,26 @@ This repository includes the source code to an app for android and ios; based on
 
 <img src="assets/images/gpsapp_Logo.png" width="400px"/>
 
-A project funded by the Bundesministerium für Landwirtschaft und Ernährung
+
+## Funded Project
+This app was developed by DKE Data in cooperation with Hochschule Osnabrück as part of and funded by the project "Experimentierfeld Agro-Nordwest". The project is funded by the Federal ministry of food and agriculture. Project sponsor is the federal agency of food and agriculture (BLE).
+
+German original:
+> "Die App wurde von DKE Data in Zusammenarbeit mit der Hochschule Osnabrück im Rahmen und aus Mitteln des Förderprojektes Experimentierfeld Agro-NordWest entwickelt. Das Projekt wird gefördert durch das Bundesministerium für Ernährung und Landwirtschaft. Projektträger ist die Bundesanstalt für Landwirtschaft und Ernährung (BLE)."
+
 
 <img src="assets/images/BMEL_Logo.svg " width="200px"/>
 as part of the Project
 <img src="assets/images/logo-agro-nordwest.svg" width="200px"/>
 
+
 ## The author
-The GPS Info App was developed by [dev4Agriculture](https://www.dev4Agriculture.de) on behalf of [DKE Data](https://www.my-agrirouter.com)
+The GPS Info App was implemented by [dev4Agriculture](https://www.dev4Agriculture.de) on behalf of [DKE Data](https://www.my-agrirouter.com)
 <img src="assets/images/dev4Agriculture_Logo.svg" width="400px"/>
 
 
 ## Specification
-The specification of the functionalities can be found [here](docs/specification).
+The specification of the functionalities can be found [here](docs/Specification.md).
 
 
 ## Setting up the app for building in your environment

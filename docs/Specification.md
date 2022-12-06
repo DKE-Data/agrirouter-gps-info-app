@@ -101,7 +101,4 @@ As a result, we will deliver:
 * A short video showing the functionalities (no marketing quality)
 * An app store release is not required
 
-# Priorities and Timeline
-
-A first version shall be available by End of April; not providing all functionalities. The second version can be available for Mid of June. A potential AppStore release can be focused afterwards for Mid of July
 
