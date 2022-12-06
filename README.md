@@ -35,6 +35,7 @@ The source code misses the following sensitive information to be buildable:
 
 2.) The ApplicationId and the CertificationVersionId have to be entered from an application generated in the agrirouter UI. See [the agrirouter documentation](https://docs.my-agrirouter.com/agrirouter-interface-documentation/latest/applications.html). These codes need to be entered [Constants.cs](/Agrirouter/Agrirouter/Common/Constants.cs)
 
+--- 
 
 ## App Handling
 
